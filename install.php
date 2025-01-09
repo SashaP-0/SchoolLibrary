@@ -18,7 +18,7 @@ fiction VARCHAR(12),
 genre VARCHAR(15),
 location INT(4), 
 onloan INT(1))
-")
+");
 $stmt->execute();
 $stmt->closeCursor();
 
@@ -34,7 +34,7 @@ password VARCHAR(200),
 dob DATE,
 email VARCHAR(20),
 role TINYINT(1)
-")
+");
 $stmt->execute();
 $stmt->closeCursor(); 
 
@@ -49,7 +49,7 @@ password VARCHAR(20),
 dob DATE,
 returned TINYINT(1), 
 review TEXT,
-")
+");
 $stmt->execute();
 $stmt->closeCursor();
 
