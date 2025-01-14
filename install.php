@@ -7,7 +7,7 @@ $conn = new PDO("mysql:host=$servername", $username, $password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sql = "CREATE DATABASE IF NOT EXISTS Library";
 $conn->exec($sql);
-$sql = "USE Toilets";
+$sql = "USE Library";
 $conn->exec($sql);
 echo "DB created successfully";
 
@@ -29,6 +29,7 @@ onloan INT(1))
 ");
 $stmt->execute();
 $stmt->closeCursor();
+echo"<br>tblbooks created";
 
 // users table //
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblusers;
@@ -41,10 +42,11 @@ username VARCHAR(15),
 password VARCHAR(200), 
 dob DATE,
 email VARCHAR(20),
-role TINYINT(1)
+role TINYINT(1))
 ");
 $stmt->execute();
-$stmt->closeCursor(); 
+$stmt->closeCursor();
+echo"<br>tblusers created";
 
 // loans table //
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblloans;
@@ -56,9 +58,10 @@ dateborrows DATE,
 password VARCHAR(20), 
 dob DATE,
 returned TINYINT(1), 
-review TEXT,
+review TEXT)
 ");
 $stmt->execute();
 $stmt->closeCursor();
+echo"<br>tblloans created";
 
 ?>
