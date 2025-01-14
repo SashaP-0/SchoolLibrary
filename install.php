@@ -53,12 +53,14 @@ $stmt = $conn->prepare("DROP TABLE IF EXISTS tblloans;
 CREATE TABLE tblloans 
 (loanid INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 bookid INT(6) NOT NULL,
-surname VARCHAR(20) NOT NULL,
+memberno INT(6) NOT NULL,
 dateborrows DATE,
 password VARCHAR(20), 
 dob DATE,
 returned TINYINT(1), 
-review TEXT)
+review TEXT,
+FOREIGN KEY (bookid) REFERENCES tblbooks(bookid),
+FOREIGN KEY (memberno) REFERENCES tblusers(memberno))
 ");
 $stmt->execute();
 $stmt->closeCursor();
