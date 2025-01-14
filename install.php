@@ -2,7 +2,15 @@
    $servername = 'localhost';
    $username = 'root';
    $password= '';
-    
+
+$conn = new PDO("mysql:host=$servername", $username, $password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$sql = "CREATE DATABASE IF NOT EXISTS Library";
+$conn->exec($sql);
+$sql = "USE Toilets";
+$conn->exec($sql);
+echo "DB created successfully";
+
 // books table //
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblbooks;
 CREATE TABLE tblbooks 
