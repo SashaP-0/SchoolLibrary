@@ -17,7 +17,7 @@ CREATE TABLE tblbooks
 (bookid INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 title VARCHAR(20) NOT NULL,
 author VARCHAR(20) NOT NULL,
-illistrator VARCHAR(20),
+illustrator VARCHAR(20),
 yearpublished INT(4),
 length INT(4), 
 readinglevel INT(2),
@@ -38,10 +38,10 @@ CREATE TABLE tblusers
 firstname VARCHAR(20),
 surname VARCHAR(20),
 title VARCHAR(4),
-username VARCHAR(15),
-password VARCHAR(200), 
-dob DATE,
-email VARCHAR(20),
+username VARCHAR(15) NOT NULL UNIQUE,
+password VARCHAR(255) NOT NULL, 
+dob DATE NOT NULL,
+email VARCHAR(50) NOT NULL UNIQUE,
 role TINYINT(1))
 ");
 $stmt->execute();
