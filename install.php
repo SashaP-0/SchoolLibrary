@@ -62,6 +62,7 @@ $stmt->execute();
 $stmt->closeCursor();
 echo"<br>tblloans created";
 
+/* Foreign Key for memberno for table tblloans*/
 $stmt = $conn->prepare("
 ALTER TABLE tblloans
 ADD CONSTRAINT fk_memberno FOREIGN KEY (memberno)
@@ -72,6 +73,7 @@ $stmt->execute();
 $stmt->closeCursor();
 echo"<br>fk_memberno created for tblloans";
 
+/* Foreign Key for bookid for table tblloans*/
 $stmt = $conn->prepare("
 ALTER TABLE tblloans
 ADD CONSTRAINT fk_bookid FOREIGN KEY (bookid)
