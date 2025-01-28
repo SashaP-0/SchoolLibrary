@@ -37,8 +37,10 @@
 
                 </select>
                 <h4>Email</h4>
-                <input type="email" name="email" placeholder="Email" required>
-                <br>
+                <input type="email" name="email" placeholder="Email" required><br>
+                <h4>Password</h4>
+                <input type="password" name="password" placeholder="Password" required><br>
+                <input type="password" name="confirm" placeholder="Confirm" required><br>
                 <br>
                 <input type="submit">
             </form>
