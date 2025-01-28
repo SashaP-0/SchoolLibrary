@@ -16,10 +16,10 @@
                 <input type="text" placeholder="Title" name="title" maxlength="4" required><br>
                 <br>
                 <h4>Date Of Birth</h4><br>
-                <select id="day" name="day" placeholder="Select Day">
+                <select id="day" name="day" placeholder="Day" required>
                     <option value=""></option>
                 </select>
-                <select id="month" name="month" placeholder="Select Month">
+                <select id="month" name="month" placeholder="Month" required>
                     <option value="01">January</option>
                     <option value="02">Febuary</option>
                     <option value="03">March</option>
@@ -33,9 +33,14 @@
                     <option value="11">November</option>
                     <option value="12">December</option>
                 </select>
-                <select id="year" name="year" placeholder="Select Year">
+                <select id="year" name="year" placeholder="Year" required>
 
                 </select>
+                <h4>Email</h4>
+                <input type="email" name="email" placeholder="Email" required>
+                <br>
+                <br>
+                <input type="submit">
             </form>
         </div>
     </body>
