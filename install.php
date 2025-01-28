@@ -35,7 +35,7 @@ echo"<br>tblbooks created";
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblusers;
 CREATE TABLE tblusers 
 (memberno INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-firstname VARCHAR(20),
+forename VARCHAR(20),
 surname VARCHAR(20),
 title VARCHAR(4),
 username VARCHAR(15) NOT NULL UNIQUE,
