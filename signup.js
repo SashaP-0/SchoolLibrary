@@ -16,3 +16,4 @@ for (let i = currentYear; i >= 1900; i--) {
     option.textContent = i;
     yearSelect.appendChild(option);
 }
+

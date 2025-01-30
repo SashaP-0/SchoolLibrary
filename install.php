@@ -11,6 +11,11 @@ $sql = "USE Library";
 $conn->exec($sql);
 echo "DB created successfully";
 
+// Drop tables in the correct order to avoid foreign key conflicts
+$conn->exec("DROP TABLE IF EXISTS tblloans");
+$conn->exec("DROP TABLE IF EXISTS tblbooks");
+$conn->exec("DROP TABLE IF EXISTS tblusers");
+
 // books table //
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblbooks;
 CREATE TABLE tblbooks 
