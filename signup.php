@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Sign Up</title>
         <meta charset="UTF-8">
         <script src="signup.js" defer></script>
+        <script src="togglepwd.js" defer></script>
+        <link rel="stylesheet" href="library.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     </head>
     <body>
         <h2>Sign Up</h2>
         <div>
             <form action="signup_logic.php" method="POST">
-                
                 <h4>Name</h4>
                 <input type="text" placeholder="Forename" name="forename" maxlength="20" required><br>
                 <input type="text" placeholder="Surname" name="surname" maxlength="20" required><br>
                 <input type="text" placeholder="Title" name="title" maxlength="4" required><br>
                 <br>
+                
                 <h4>Date Of Birth</h4><br>
                 <select id="day" name="day" placeholder="Day" required>
                     <option value=""></option>
@@ -36,12 +39,22 @@
                 <select id="year" name="year" placeholder="Year" required>
 
                 </select>
+                
                 <h4>Email</h4>
                 <input type="email" name="email" placeholder="Email" required><br>
+                
                 <h4>Password</h4>
-                <input type="password" name="password" placeholder="Password" required><br>
-                <input type="password" name="confirm" placeholder="Confirm" required><br>
+                <div class="password-container">
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <i class="fa-solid fa-eye" id="togglePassword"></i>
+                </div>
                 <br>
+                <div class="password-container">
+                    <input type="password" name="confirm" id="confirmPassword" placeholder="Confirm Password" required>
+                    <i class="fa-solid fa-eye" id="toggleConfirmPassword"></i>
+                </div>
+                <br>
+                
                 <input type="submit">
             </form>
         </div>
