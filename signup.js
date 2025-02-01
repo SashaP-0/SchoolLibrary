@@ -17,3 +17,20 @@ for (let i = currentYear; i >= 1900; i--) {
     yearSelect.appendChild(option);
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    function togglePassword(inputId, toggleId) {
+        const passwordField = document.getElementById(inputId);
+        const toggleButton = document.getElementById(toggleId);
+
+        if (passwordField && toggleButton) {
+            toggleButton.addEventListener("click", function () {
+                passwordField.type = passwordField.type === "password" ? "text" : "password";
+                toggleButton.classList.toggle("fa-eye");
+                toggleButton.classList.toggle("fa-eye-slash");
+            });
+        }
+    }
+
+    togglePassword("password", "togglePassword");
+    togglePassword("confirmPassword", "toggleConfirmPassword");
+});

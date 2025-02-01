@@ -44,14 +44,13 @@
                 <input type="email" name="email" placeholder="Email" required><br>
                 
                 <h4>Password</h4>
-                <div class="password-container">
-                    <input type="password" name="password" id="password" placeholder="Password" required>
-                    <i class="fa-solid fa-eye" id="togglePassword"></i>
+                <div>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <i class="fa-solid fa-eye" id="togglePassword" style="cursor: pointer;"></i>
                 </div>
-                <br>
-                <div class="password-container">
-                    <input type="password" name="confirm" id="confirmPassword" placeholder="Confirm Password" required>
-                    <i class="fa-solid fa-eye" id="toggleConfirmPassword"></i>
+                <div>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <i class="fa-solid fa-eye" id="toggleConfirmPassword" style="cursor: pointer;"></i>
                 </div>
                 <br>
                 
