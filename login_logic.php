@@ -22,16 +22,9 @@ if ($user['password'] == $hashpassword) {
     $_SESSION['user_id'] = $user['memberno'];
     $_SESSION['username'] = $user['username'];
     $_SESSION['role'] = $user['role'];
-}
-/*
-if ($user && password_verify($password, $user['password'])) {
-    // Store user data in session
-    $_SESSION['user_id'] = $user['memberno'];
-    $_SESSION['username'] = $user['username'];
-    $_SESSION['role'] = $user['role'];
     // header("Location: index.php");
     exit();
-} else {
+}  else {
     // Error message if login fails
     echo "Invalid username or password.";
 }
