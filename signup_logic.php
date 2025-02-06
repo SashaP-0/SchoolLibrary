@@ -62,7 +62,7 @@ try {
     $conn->commit(); // Commit transaction
 
     // Redirect with username in URL
-    header("Location: login.php?user=".urlencode($username));
+    header("Location: login.php?user=" . urlencode($username));
     exit();
 
 } catch (PDOException $e) {
