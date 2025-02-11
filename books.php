@@ -1,5 +1,4 @@
 <?php
-header("Location: addbooks.php");
 include_once('connection.php');
 array_map("htmlspecialchars", $_POST);
 
@@ -14,10 +13,11 @@ $seriesposition = $_POST['seriesposition'] ?? null;
 $fiction = $_POST['fiction'] ?? null;
 $genre = $_POST['genre'] ?? null;
 $location = $_POST['location'] ?? null;
-$onloan = $_POST['onloan'] ?? null;
+$onloan = 0;
 
-$stmt = $conn->prepare("INSERT INTO tblbooks (bookid, title, author, illustrator, yearpublished, length, readinglevel, seriesposition, fiction, genre, location, onloan) 
-                            VALUES (:bookid, :title, :author, :illustrator, :yearpublished, :length, :readinglevel, :seriesposition, :fiction, :genre, :location, :onloan)");    $stmt->bindParam(':bookid', $bookid);
+$stmt = $conn->prepare("INSERT INTO tblbooks (bookid, title, author, illustrator, yearpublished, length, readinglevel, seriesposition, fiction, genre, location, onloan)
+                            VALUES (:bookid, :title, :author, :illustrator, :yearpublished, :length, :readinglevel, :seriesposition, :fiction, :genre, :location, :onloan)");    
+$stmt->bindParam(':bookid', $bookid);
 $stmt->bindParam(':title', $title);
 $stmt->bindParam(':author', $author);
 $stmt->bindParam(':illustrator', $illustrator);
@@ -30,5 +30,6 @@ $stmt->bindParam(':genre', $genre);
 $stmt->bindParam(':location', $location);
 $stmt->bindParam(':onloan', $onloan);
 
-
+$stmt->execute();
+header("Location: addbooks.php");
 ?>

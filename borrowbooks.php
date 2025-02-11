@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Add Books</title>
+    <title>Borrow Books</title>
 </head>
 <body>
-    <h1>Add a Book</h1>
+    <h1>Borrow books</h1>
     <form action="books.php" method="post">
         Book ID*: <input type="text" name="bookid" required><br>
         Title*: <input type="text" name="title" required><br>
@@ -18,6 +18,7 @@
         Fiction (Yes/No): <input type="text" name="fiction"><br>
         Genre: <input type="text" name="genre"><br>
         Location: <input type="number" name="location"><br>
+        On Loan (1 for Yes, 0 for No): <input type="number" name="onloan"><br>
         
         <input type="submit" value="Add Book">
     </form>
@@ -25,5 +26,3 @@
     <a href="mainbooks.php">Back to Main Page</a>
 </body>
 </html>
-
-
