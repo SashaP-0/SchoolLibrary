@@ -20,7 +20,7 @@ $conn->exec("DROP TABLE IF EXISTS tblusers");
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblbooks;
 CREATE TABLE tblbooks 
 (bookid INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-title VARCHAR(20) NOT NULL,
+title VARCHAR(40) NOT NULL,
 author VARCHAR(20) NOT NULL,
 illustrator VARCHAR(20),
 yearpublished INT(4),
