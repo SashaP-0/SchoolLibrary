@@ -44,6 +44,7 @@ if ($user) {
     echo('<br>');
     if (password_verify($password, $hash)) {
         echo "Password matches!";
+        header("Location: index.php");
     } else {
         echo "Invalid Password";
     }
