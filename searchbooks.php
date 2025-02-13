@@ -5,7 +5,7 @@ $searchTerm = "";
 $searchBy = "";
 $books = [];
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search'])) {
     $searchTerm = $_POST['searchTerm'];
     $searchBy = $_POST['searchBy'];
 
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <option value="bookid" <?= $searchBy == "bookid" ? "selected" : ""; ?>>Book ID</option>
             <option value="author" <?= $searchBy == "author" ? "selected" : ""; ?>>Author</option>
         </select>
-        <button type="submit">Search</button>
+        <button type="submit" name="search">Search</button>
     </form>
 
     <br>
@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <th>Book ID</th>
             <th>Title</th>
             <th>Author</th>
+            <th>Actions</th>
         </tr>
         <?php if (!empty($books)): ?>
             <?php foreach ($books as $book): ?>
@@ -50,11 +51,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <td><?= $book['bookid']; ?></td>
                     <td><?= $book['title']; ?></td>
                     <td><?= $book['author']; ?></td>
+                    <td>
+                        <form method="post" action="editbooks.php" style="display:inline;">
+                            <input type="hidden" name="bookid" value="<?= $book['bookid']; ?>">
+                            <button type="submit">Edit</button>
+                        </form>
+                        <form method="post" action="deletebooks.php" style="display:inline;">
+                            <input type="hidden" name="bookid" value="<?= $book['bookid']; ?>">
+                            <button type="submit">Delete</button>
+                        </form>
+                        <form method="post" action="borrowbooks.php" style="display:inline;">
+                            <input type="hidden" name="bookid" value="<?= $book['bookid']; ?>">
+                            <button type="submit">Borrow</button>
+                        </form>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         <?php else: ?>
             <tr>
-                <td colspan="3">No books found.</td>
+                <td colspan="4">No books found.</td>
             </tr>
         <?php endif; ?>
     </table>
