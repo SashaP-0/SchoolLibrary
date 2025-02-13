@@ -4,7 +4,6 @@ include_once('connection.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['bookid'])) {
     $bookid = $_POST['bookid'];
 
-    // Fetch book details to display before deletion
     $stmt = $conn->prepare("SELECT * FROM tblbooks WHERE bookid = :bookid");
     $stmt->bindParam(':bookid', $bookid);
     $stmt->execute();
@@ -19,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['bookid'])) {
     exit;
 }
 
-// Handle book deletion when user confirms
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['confirm_delete'])) {
     $stmt = $conn->prepare("DELETE FROM tblbooks WHERE bookid = :bookid");
     $stmt->bindParam(':bookid', $bookid);

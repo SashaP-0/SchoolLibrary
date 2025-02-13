@@ -15,18 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
         $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    if (isset($_POST['borrowBook'])) {
-        $bookIdToBorrow = $_POST['bookid'];
-        $memberno = $_POST['memberno']; 
-        $stmt = $conn->prepare("INSERT INTO tblloans (bookid, memberno, dateborrows, returned) VALUES (:bookid, :memberno, NOW(), 0)");
-        $stmt->bindValue(':bookid', $bookIdToBorrow, PDO::PARAM_INT);
-        $stmt->bindValue(':memberno', $memberno, PDO::PARAM_INT);
-        $stmt->execute();
-        $stmt = $conn->prepare("UPDATE tblbooks SET onloan = 1 WHERE bookid = :bookid");
-        $stmt->bindValue(':bookid', $bookIdToBorrow, PDO::PARAM_INT);
-        $stmt->execute();
-        echo "You have successfully borrowed the book!";
-    }
 }
 ?>
 
@@ -64,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <td><?= $book['title']; ?></td>
                     <td><?= $book['author']; ?></td>
                     <td>
-                        <form method="post" action="" style="display:inline;">
+                        <form method="post" action="borrowbooks.php" style="display:inline;">
                             <input type="hidden" name="bookid" value="<?= $book['bookid']; ?>">
                             <input type="hidden" name="memberno" value="1"> 
                             <button type="submit" name="borrowBook">Borrow</button>
