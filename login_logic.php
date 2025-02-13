@@ -57,7 +57,7 @@ if ($user) {
     $_SESSION['memberno'] = $user['memberno'];
     $_SESSION['username'] = $user['username'];
     $_SESSION['role'] = $user['role'];
-    header("Location: index.php");
+    header("Location: mainbooks.php");
 } else {
     echo "user not found";
 }
