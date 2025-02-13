@@ -1,6 +1,7 @@
 <?php
 include_once("connection.php");
 session_start(); // Start session if needed
+print_r($_POST);
 
 // Sanitize input
 $_POST = array_map("htmlspecialchars", $_POST);

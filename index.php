@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="library.css">
     </head>
     <body>
+        <h1>Library</h1>
         <ul>
             <li><a href="mainbooks.php">Books</a></li>
             <li><a href="login.php">Login</a></li>

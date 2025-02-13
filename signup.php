@@ -45,15 +45,14 @@
                 
                 <h4>Password</h4>
                 <div>
-                    <input type="password" id="password" placeholder="Password" required>
+                    <input name="password" type="password" id="password" placeholder="Password" required>
                     <i class="fa-solid fa-eye" id="togglePassword" style="cursor: pointer;"></i>
                 </div>
                 <div>
-                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <input name="confirm" type="password" id="confirmPassword" placeholder="Confirm Password" required>
                     <i class="fa-solid fa-eye" id="toggleConfirmPassword" style="cursor: pointer;"></i>
                 </div>
                 <br>
-                
                 <input type="submit">
             </form>
         </div>
