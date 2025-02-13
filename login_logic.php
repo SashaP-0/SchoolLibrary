@@ -61,5 +61,4 @@ if ($user) {
 } else {
     echo "user not found";
 }
-
 ?>
