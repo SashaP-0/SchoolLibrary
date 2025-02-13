@@ -15,26 +15,6 @@ $stmt->bindParam(":username", $username, PDO::PARAM_STR);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-print_r($user);
-// Check if user exists and password is correct
-print('<br>');
-print($user['password']);
-print('<br>');
-
-
-
-$plain_password = "mypassword";
-$stored_hash = password_hash($plain_password, PASSWORD_BCRYPT);
-
-if (password_verify($plain_password, $stored_hash)) {
-    echo "Password matches! -- test";
-} else {
-    echo "Invalid password. -- test";
-}
-
-echo('<br>');
-echo('<br>');
-
 $hash = trim($user['password']);
 
 if ($user) {
