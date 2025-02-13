@@ -42,7 +42,6 @@ if ($user) {
     echo($user['password'].'<br>');
     echo $password;
     echo('<br>');
-    //
     if (password_verify($password, $hash)) {
         echo "Password matches!";
         $_SESSION['memberno'] = $user['memberno'];
@@ -52,12 +51,6 @@ if ($user) {
     } else {
         echo "Invalid Password";
     }
-    //
-    /* Delete Bellow when password_verify works
-    $_SESSION['memberno'] = $user['memberno'];
-    $_SESSION['username'] = $user['username'];
-    $_SESSION['role'] = $user['role'];
-    header("Location: mainbooks.php");*/
 } else {
     echo "user not found";
 }
